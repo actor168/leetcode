@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 class LongestPalindromicStr {
     // 找出最长回文子串
     public String longestPalindrome_bak(String s) {

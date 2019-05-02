@@ -1,6 +1,3 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
 class Problem112 {
 
     public static void main(String[] args) {
