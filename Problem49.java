@@ -1,6 +1,10 @@
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.ArrayList;
 
-class Solution {
+class Problem49 {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
@@ -27,6 +31,6 @@ class Solution {
 
     public static void main(String[] args) {
         String[] ttt = new String[]{"eat","tea","tan","ate","nat","bat"};
-        new Solution().groupAnagrams(ttt);
+        new Problem49().groupAnagrams(ttt);
     }
 }

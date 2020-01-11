@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Problem18 {
 	public static void main(String[] args) {
 		int[] nums = new int[]{1, 0, -1, 0, -2, 2};
@@ -6,6 +8,6 @@ class Problem18 {
 	}
 
 	public List<List<Integer>> fourSum(int[] nums, int target) {
-        
+        return null;
     }
 }
