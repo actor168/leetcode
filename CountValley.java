@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class CountValley {
 
     // Complete the countingValleys function below.
     static int countingValleys(int n, String s) {

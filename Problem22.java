@@ -1,37 +1,23 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 class Problem22 {
-    public static void main(String[] args) {
-        System.out.println(new Problem22().generateParenthesis(3));
-        System.out.println(new Problem22().generateParenthesis(4).size());
-        /*
+	public static void main(String[] args) {
+		System.out.println(new Problem22().generateParenthesis(3).size());
+	}
 
-
-        ["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"]
-        */
-    }
-
-
-    public List<String> generateParenthesis(int n) {
-        Set<String> res = new HashSet<String>();
+	public List<String> generateParenthesis(int n) {
+        List<String> res = new ArrayList<String>();
         if (n < 1) {
-            return new ArrayList<>(res);
-        }
-
-        if (n == 1) {
-            res.add("()");
+            res.add("");
         } else {
-            List<String> subRes = generateParenthesis(n-1);
-            for (String subStr : subRes) {
-                res.add("()" + subStr);
-                res.add("(" + subStr + ")");
-                res.add(subStr + "()");
-            }
+           for (int i = 0; i < n; i++) {
+           		for(String left : generateParenthesis(i)) {
+           			for (String right: generateParenthesis(n-1-i)) {
+           				res.add("(" + left + ")" + right);
+           			}
+           		}
+           }
         }
-
-        return new ArrayList<>(res);
+        return res;
     }
 }

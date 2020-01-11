@@ -1,4 +1,4 @@
-class List {
+class MyList {
 
     private int LEN;
     
@@ -53,11 +53,11 @@ class List {
         return LEN - cur;
     }
 
-    void merge(List list) {
+    void merge(MyList list) {
 
     }
 
-    List sort() {
+    MyList sort() {
         return null;
     }
 
@@ -112,7 +112,7 @@ class List {
     }
 
     public static void main(String[] args) {
-        List list = new List();
+        MyList list = new MyList();
         list.insert(3);
         list.insert(4);
         list.insert(5);

@@ -1,44 +1,21 @@
-import java.util.Stack;
-
 class Problem26 {
     public static void main(String[] args) {
-        System.out.println(new Problem26().isValid("{}[(])"));
+        int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 4};
+        nums = new int[]{1,2,3};
+        nums = new int[]{1,2,2,3};
+        nums = new int[]{1,2,2,2};
+        int len = new Problem26().removeDuplicates(nums);
+        System.out.println(len);
     }
 
-    public boolean isValid(String s) {
-        if (s.length() <= 0) return true;
-        Stack<Character> stack = new Stack<>();
-        int i = 0;
-        char cur = s.charAt(i);
-        while(( cur = s.charAt(i) )!= '\0') {
-            switch (cur) {
-                case ']':
-                    if (stack.isEmpty()) return false;
-                    char c = stack.pop();
-                    if (c != '[') return false;
-                    break;
-                case '}':
-                    if (stack.isEmpty()) return false;
-                    c = stack.pop();
-                    if (c != '{') return false;
-                    break;
-                case ')':
-                    if (stack.isEmpty()) return false;
-                    c = stack.pop();
-                    if (c != '(') return false;
-                    break;
-                default:
-                    stack.push(cur);
-            } 
-            ++i;
-            if (i == s.length()) {
-                break;
+    public int removeDuplicates(int[] nums) {
+        int cur = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[cur-1]) {
+                nums[cur] = nums[i];
+                cur++;
             }
         }
-
-        if (stack.isEmpty()) {
-            return true;
-        }
-        return false;
+        return cur;
     }
 }
